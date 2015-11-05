@@ -34,7 +34,7 @@ docker run -d --name docker-teamcity -p 8111:8111 docker-teamcity-custom
 docker run -d --name teamcity -p 8111:8111 otasys/teamcity
 ```
 
-### Teamcity [1489](https://github.com/gabrianoo/docker-teamcity/releases/tag/1489)
+### Teamcity [9.1.3](https://github.com/gabrianoo/docker-teamcity/releases/tag/9.1.3)
 
 #### What is inside
 
@@ -45,5 +45,5 @@ docker run -d --name teamcity -p 8111:8111 otasys/teamcity
 #### How to run
 
 ```
-docker run -d --name teamcity -p 8111:8111 otasys/teamcity:1489
+docker run -d --name teamcity -p 8111:8111 otasys/teamcity:9.1.3
 ```
