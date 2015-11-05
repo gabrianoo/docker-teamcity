@@ -11,10 +11,10 @@ RUN apt-get -q update
 RUN apt-get -yq upgrade
 
 ## Install wget
-RUN apt-get -yq install wget
+RUN apt-get -yq install --no-install-recommends wget
 
 ## Install Software Properties Common to use add-apt-repository command
-RUN apt-get -yq install software-properties-common
+RUN apt-get -yq install --no-install-recommends software-properties-common
 
 ## Add Oracle Java 8 Repository to Ubuntu
 RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections
@@ -27,7 +27,7 @@ RUN apt-get -q update
 # Install Oracle Java 8
 #----------------------
 
-RUN apt-get -yq install oracle-java8-installer
+RUN apt-get -yq install --no-install-recommends oracle-java8-installer
 
 # Set JAVA_HOME variable
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
@@ -41,10 +41,9 @@ VOLUME  ["/data/teamcity"]
 ENV TEAMCITY_DATA_PATH /data/teamcity
 
 ENV TC_PACKAGE TeamCity-9.1.3.tar.gz
-ENV TC_URL http://download.jetbrains.com/teamcity
-RUN wget $TC_URL/$TC_PACKAGE && \
-    tar zxf $TC_PACKAGE -C /opt && \
-    rm -rf $TC_PACKAGE
+RUN wget http://download.jetbrains.com/teamcity/$TC_PACKAGE
+RUN tar zxf $TC_PACKAGE -C /opt
+RUN rm -rf $TC_PACKAGE
 
 EXPOSE 8111
 
@@ -55,7 +54,7 @@ EXPOSE 8111
 # Remove unwanted applications & Clean Installations
 RUN apt-get autoremove
 RUN apt-get clean
-RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /var/cache/oracle-jdk8-installer
+RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /var/cache/oracle-jdk8-installer /var/cache/apt
 
 # Default command.
 CMD ["/opt/TeamCity/bin/teamcity-server.sh", "run"]
