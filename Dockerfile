@@ -1,4 +1,4 @@
-FROM otasys/java:1.8.0_66
+FROM otasys/docker-java:1.8.0_66
 MAINTAINER Ahmed Hassanien <ahmed_hassanien@otasys.com>
 
 #------------------
