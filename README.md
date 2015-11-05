@@ -12,7 +12,7 @@ Docker build file for Team City server. You need to have [Docker](https://www.do
 ### Latest
 
 ```
-docker run -d --name teamcity otasys/teamcity
+docker run -d --name teamcity -p 8111:8111 otasys/teamcity
 ```
 
 ### Teamcity [1489](https://github.com/gabrianoo/docker-teamcity/releases/tag/1489)
