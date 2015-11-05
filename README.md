@@ -22,7 +22,7 @@ docker run -d --name teamcity otasys/teamcity
 3. Teamcity 9.1.3
 
 ```
-docker run -d --name teamcity otasys/teamcity:1489
+docker run -d --name teamcity -p 8111:8111 otasys/teamcity:1489
 ```
 
 ## To build
@@ -35,5 +35,5 @@ docker build -t docker-teamcity-custom docker-teamcity
 then to run that
 
 ```
-docker run -d --name docker-teamcity docker-teamcity-custom
+docker run -d --name docker-teamcity -p 8111:8111 docker-teamcity-custom
 ```
