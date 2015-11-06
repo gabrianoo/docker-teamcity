@@ -26,7 +26,7 @@ docker run -d --name docker-teamcity -p 8111:8111 docker-teamcity-custom
 
 1. Ubuntu 14.04
 2. Oracle Java 8 Latest
-3. Teamcity 9.1.3
+3. Teamcity Latest
 
 #### How to run
 
