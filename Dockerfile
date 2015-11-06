@@ -1,10 +1,6 @@
 FROM otasys/java:1.8.0_66
 MAINTAINER Ahmed Hassanien <ahmed_hassanien@otasys.com>
 
-#------------------
-# Install Team City
-#------------------
-
 # Environment Variables
 ENV TEAMCITY_DATA_PATH=/data/teamcity \
     TC_PKG=TeamCity-9.1.3.tar.gz
