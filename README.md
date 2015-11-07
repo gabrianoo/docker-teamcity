@@ -9,13 +9,14 @@ Container is exposing default Teamcity port `8111` and data volume is at `/data/
 
 ```
 git clone https://github.com/gabrianoo/docker-teamcity.git
-docker build -t docker-teamcity-custom docker-teamcity
+docker build -t docker-teamcity docker-teamcity
+docker build -t docker-teamcity-data
 ```
 
 ### How to run
 
 ```
-docker run -d --name docker-teamcity -p 8111:8111 docker-teamcity-custom
+docker run -d --name docker-teamcity --volumes-from docker-teamcity-data -p 8111:8111 docker-teamcity
 ```
 
 ## Versions
@@ -31,7 +32,7 @@ docker run -d --name docker-teamcity -p 8111:8111 docker-teamcity-custom
 #### How to run
 
 ```
-docker run -d --name teamcity -p 8111:8111 otasys/teamcity
+docker run -d --name teamcity -p 8111:8111 --volumes-from otasys/teamcity-data otasys/teamcity
 ```
 
 ### Teamcity [9.1.3](https://github.com/gabrianoo/docker-teamcity/releases/tag/9.1.3)
@@ -45,5 +46,5 @@ docker run -d --name teamcity -p 8111:8111 otasys/teamcity
 #### How to run
 
 ```
-docker run -d --name teamcity -p 8111:8111 otasys/teamcity:9.1.3
+docker run -d --name teamcity -p 8111:8111 --volumes-from otasys/teamcity-data otasys/teamcity:9.1.3
 ```
