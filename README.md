@@ -16,6 +16,7 @@ docker build -t docker-teamcity-data
 ### How to run
 
 ```
+docker run -d --name docker-teamcity-data docker-teamcity-data
 docker run -d --name docker-teamcity --volumes-from docker-teamcity-data -p 8111:8111 docker-teamcity
 ```
 
@@ -36,7 +37,8 @@ Go to the docker engine URL [I assume it is localhost] `http://localhost:8111/tc
 #### How to run
 
 ```
-docker run -d --name teamcity -p 8111:8111 --volumes-from otasys/teamcity-data otasys/teamcity
+docker run -d --name teamcity-data otasys/teamcity-data
+docker run -d --name teamcity -p 8111:8111 --volumes-from teamcity-data otasys/teamcity
 ```
 
 ### Teamcity [9.1.3](https://github.com/gabrianoo/docker-teamcity/releases/tag/9.1.3)
@@ -50,5 +52,6 @@ docker run -d --name teamcity -p 8111:8111 --volumes-from otasys/teamcity-data o
 #### How to run
 
 ```
-docker run -d --name teamcity -p 8111:8111 --volumes-from otasys/teamcity-data otasys/teamcity:9.1.3
+docker run -d --name teamcity-data otasys/teamcity-data
+docker run -d --name teamcity -p 8111:8111 --volumes-from teamcity-data otasys/teamcity:9.1.3
 ```
