@@ -19,6 +19,10 @@ docker build -t docker-teamcity-data
 docker run -d --name docker-teamcity --volumes-from docker-teamcity-data -p 8111:8111 docker-teamcity
 ```
 
+### Checking everything is OK
+
+Go to the docker engine URL [I assume it is localhost] `http://localhost:8111/tc`
+
 ## Versions
 
 ### Teamcity Latest
