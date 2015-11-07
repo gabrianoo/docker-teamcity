@@ -10,6 +10,7 @@ VOLUME  ["/data/teamcity"]
 
 RUN wget http://download.jetbrains.com/teamcity/$TC_PKG && \
     tar zxf $TC_PKG -C /opt && \
+    mv /opt/TeamCity/webapps/ROOT /opt/TeamCity/webapps/tc && \
     rm -rf $TC_PKG
 
 # Expose Teamcity default port
