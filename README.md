@@ -18,6 +18,7 @@ docker build -t docker-teamcity-data
 ```
 docker run -d --name docker-teamcity-data docker-teamcity-data
 docker run -d --name docker-teamcity --volumes-from docker-teamcity-data -p 8111:8111 docker-teamcity
+docker run -d --name docker-teamcity-agent -e TEAMCITY_SERVER=http://<TEAMCITY_SERVER_IP>:<TEAMCITY_SERVER_PORT> docker-teamcity-agent
 ```
 
 ### Checking everything is OK
