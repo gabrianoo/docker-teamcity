@@ -16,9 +16,13 @@ docker build -t docker-teamcity-data
 ### How to run
 
 ```
+# Running the teamcity data volume
 docker run -d --name docker-teamcity-data docker-teamcity-data
+# Running the teamcity server
 docker run -d --name docker-teamcity --volumes-from docker-teamcity-data -p 8111:8111 docker-teamcity
-docker run -d --name docker-teamcity-agent -e TEAMCITY_SERVER=http://<TEAMCITY_SERVER_IP>:<TEAMCITY_SERVER_PORT> docker-teamcity-agent
+# Running the teamcity agent
+docker run -d --name docker-teamcity-agent -e TEAMCITY_SERVER=http://<TC_SERVER_IP>:<TC_SERVER_PORT> \
+-p 9090:9090 docker-teamcity-agent
 ```
 
 ### Checking everything is OK
