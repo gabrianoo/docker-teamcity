@@ -3,7 +3,7 @@ MAINTAINER Ahmed Hassanien <ahmed_hassanien@otasys.com>
 
 # Environment Variables
 ENV TEAMCITY_DATA_PATH=/data/teamcity \
-    TC_PKG=TeamCity-9.1.3.tar.gz
+    TC_PKG=TeamCity-9.1.4.tar.gz
 
 # TeamCity data is stored in a volume to facilitate container upgrade
 VOLUME  ["/data/teamcity"]

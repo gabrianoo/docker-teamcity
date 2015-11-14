@@ -42,6 +42,22 @@ docker run -d --name teamcity-data otasys/teamcity-data
 docker run -d --name teamcity -p 8111:8111 --volumes-from teamcity-data otasys/teamcity
 ```
 
+### Teamcity [9.1.4](https://github.com/gabrianoo/docker-teamcity/releases/tag/9.1.4)
+
+#### What is inside
+
+1. Ubuntu 14.04
+2. Java 1.8.0_66
+3. Teamcity 9.1.4
+
+#### How to run
+
+```
+docker run -d --name teamcity-data otasys/teamcity-data
+docker run -d --name teamcity -p 8111:8111 --volumes-from teamcity-data otasys/teamcity:9.1.4
+```
+
+
 ### Teamcity [9.1.3](https://github.com/gabrianoo/docker-teamcity/releases/tag/9.1.3)
 
 #### What is inside
@@ -56,3 +72,4 @@ docker run -d --name teamcity -p 8111:8111 --volumes-from teamcity-data otasys/t
 docker run -d --name teamcity-data otasys/teamcity-data
 docker run -d --name teamcity -p 8111:8111 --volumes-from teamcity-data otasys/teamcity:9.1.3
 ```
+
