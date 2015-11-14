@@ -1,8 +1,15 @@
 FROM otasys/java:1.8.0_66
 MAINTAINER Ahmed Hassanien <ahmed_hassanien@otasys.com>
 
-ADD start.sh /opt/setupAgent.sh
-RUN chmod +x /opt/setupAgent.sh
+ADD setupAgent.sh /opt/setupAgent.sh
+
+RUN DEBIAN_FRONTEND=noninteractive && \
+	chmod +x /opt/setupAgent.sh && \
+	apt-get -q update && \
+	apt-get -yq install unzip && \
+	apt-get autoremove && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /var/cache/unzip
 
 # Default command.
 CMD ["sh", "/opt/setupAgent.sh"]
