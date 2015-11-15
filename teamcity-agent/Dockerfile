@@ -6,7 +6,7 @@ ADD setupAgent.sh /opt/setupAgent.sh
 RUN DEBIAN_FRONTEND=noninteractive && \
 	chmod +x /opt/setupAgent.sh && \
 	apt-get -q update && \
-	apt-get -yq install unzip && \
+	apt-get -yq install unzip git && \
 	apt-get autoremove && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /var/cache/unzip
