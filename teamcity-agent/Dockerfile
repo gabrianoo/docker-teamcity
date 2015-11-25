@@ -12,4 +12,4 @@ RUN DEBIAN_FRONTEND=noninteractive && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /var/cache/unzip
 
 # Default command.
-CMD ["sh", "/opt/setupAgent.sh"]
+CMD ["bash", "/opt/setupAgent.sh"]
