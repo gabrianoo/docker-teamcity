@@ -8,8 +8,9 @@ RUN DEBIAN_FRONTEND=noninteractive && \
 	apt-get -q update && \
 	apt-get -yq install unzip git && \
 	apt-get autoremove && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /var/cache/unzip
+	rm /bin/sh && ln -s /bin/bash /bin/sh && \
+    	apt-get clean && \
+    	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /var/cache/unzip
 
 # Default command.
 CMD ["bash", "/opt/setupAgent.sh"]
