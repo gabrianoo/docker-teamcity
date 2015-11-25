@@ -1,7 +1,7 @@
 #!/bin/sh
 
 mkdir -p /opt/agent
-wget $TEAMCITY_SERVER/update/buildAgent.zip
+wget --no-check-certificate $TEAMCITY_SERVER/update/buildAgent.zip
 unzip -q -d /opt/agent buildAgent.zip
 rm buildAgent.zip
 chmod +x /opt/agent/bin/agent.sh
